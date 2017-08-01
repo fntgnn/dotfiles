@@ -3,6 +3,8 @@ colorscheme candyman
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+set hid     "optimize switching between buffers
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -29,6 +31,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'mattn/emmet-vim'
+Plugin 'tpope/vim-fugitive'
 " ================================
 
 
@@ -147,3 +150,6 @@ map <leader>i :TsuImport<cr>
 
 "search:
 map <leader>h :set hlsearch!<cr>
+
+"set guifont=Hack-Regular
+let g:airline_powerline_fonts = 1
