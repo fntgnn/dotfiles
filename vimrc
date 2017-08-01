@@ -1,4 +1,4 @@
-colorscheme slate
+colorscheme candyman 
 "Vundle setup:
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -13,6 +13,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " === insert your plugins here ===
+Plugin 'flazz/vim-colorschemes'
 Plugin 'sjl/gundo.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
@@ -29,6 +30,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'mattn/emmet-vim'
 " ================================
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
