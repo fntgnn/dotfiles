@@ -3,8 +3,6 @@ colorscheme candyman
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-set hid     "optimize switching between buffers
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -28,6 +26,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'quramy/tsuquyomi'
 
 Plugin 'pangloss/vim-javascript'
+Plugin 'lukaszb/vim-web-indent'
 Plugin 'mxw/vim-jsx'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'mattn/emmet-vim'
@@ -52,15 +51,23 @@ filetype plugin indent on    " required
 
 
 syntax enable		"enable syntax processing
-set tabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab		"tabs into spaces
 set number
 set showcmd
 set cursorline      "highlight cursor line
-filetype indent on  "load filetype specific indent files
+"filetype indent on  "load filetype specific indent files
 set wildmenu
 set lazyredraw      "redraw only when we need to
 set showmatch
+set smarttab    " per le indentazioni (credo)
+set smartindent
+set cindent
+set hid     "optimize switching between buffers
+
+
 
 " SEARCH:
 set incsearch       "search as character are entered
