@@ -1,33 +1,34 @@
 # Vim
-## Installazione
-- Installare [Vundle](https://github.com/VundleVim/Vundle.vim)
-- Installare [vim-colorscheme](https://github.com/flazz/vim-colorschemes) e copiare la cartella `colors/` nella cartella `~/.vim/`
+## How to install
+- Install [Vundle](https://github.com/VundleVim/Vundle.vim)
+- Install [vim-colorscheme](https://github.com/flazz/vim-colorschemes) and copy the `colors/` folder in  `~/.vim/`
 
-## Comandi utili
+## Useful commands
 
-### Switch tra i buffer:
-* avanti e indietro: `,q`, `,w`
-* specifico: `,<numero>`
+### Buffer switching
+* forward: `,q`
+* backward: `,w`
+* specific buffer: `,<numero>`
 
-### Ricerca
-* toggle su evidenziazione parole cercate: `,h`
+### Search
+* toggle syntax highlighting: `,h`
 
-### Numeri di linea
-* toggle su numeri di linea relativi: `,r`
+### Relative line numbers
+* toggle: `,r`
 
 ### Clipboard
-* per copiare sulla clipboard: `"*y...`
+* copy in the system clipboard: `"*y...`
 
-### Commenti
-* toggle commento: `,c<space>`
-* commentare: `,cc`
-* togliere commento: `,cu`
+### Comments
+* toggle comment: `,c<space>`
+* comment line: `,cc`
+* remove comment line: `,cu`
 
 ### NERDTree
-* toggle di visualizzazione: `Ctrl + n`
+* toggle: `Ctrl + n`
 
 ### Emmet plugin
-* autocompletamento: `Ctrl+y+,`
+* generator: `Ctrl+y+,`
 
 ### Typescript
-* autoimport: `,i`. Ci si posiziona sul metodo da importare (es: `OnInit`)
+* autoimport: `,i`. Move the cursor on the interface, method or component you need to import (es: `OnInit`, not `ngOnInit`)
