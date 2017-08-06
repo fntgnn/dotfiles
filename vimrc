@@ -160,3 +160,7 @@ map <leader>h :set hlsearch!<cr>
 
 "set guifont=Hack-Regular
 let g:airline_powerline_fonts = 1
+
+
+"TsuImport per importare non il path completo ma solo quello corto
+let g:tsuquyomi_shortest_import_path = 1
