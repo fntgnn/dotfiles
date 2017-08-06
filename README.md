@@ -26,5 +26,5 @@
 ### Emmet plugin
 * autocompletamento: `Ctrl+y+,`
 
-### Tpyescript
+### Typescript
 * autoimport: `,i`. Ci si posiziona sul metodo da importare (es: `OnInit`)
