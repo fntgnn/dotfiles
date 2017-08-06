@@ -18,7 +18,7 @@
 ### Commenti
 * toggle commento: `,c<space>`
 * commentare: `,cc`
-* togliere commento: `,cu'
+* togliere commento: `,cu`
 
 ### NERDTree
 * toggle di visualizzazione: `Ctrl + n`
