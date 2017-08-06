@@ -1,4 +1,7 @@
 # Vim
+## Installazione
+- Installare [Vundle](https://github.com/VundleVim/Vundle.vim)
+- Installare [vim-colorscheme](https://github.com/flazz/vim-colorschemes) e copiare la cartella `colors/` nella cartella `~/.vim/`
 
 ## Comandi utili
 
