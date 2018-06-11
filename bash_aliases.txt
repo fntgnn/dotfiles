@@ -1,0 +1,11 @@
+alias ll="ls -la --color"
+
+alias g='git'
+#alias vim='nvim-qt'
+
+alias ga='git add'
+alias gb='git branch'
+alias gaa='git add --all'
+alias gs='git status'
+alias gcam='git commit -am'
+alias gcamend='git commit -a --amend --no-edit'
