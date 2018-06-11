@@ -25,4 +25,5 @@
     "editor.multiCursorModifier": "alt",
     "git.enableSmartCommit": true,
     "workbench.statusBar.feedback.visible": false,
+    "php.suggest.basic": false
 }
