@@ -28,7 +28,7 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=4
 
-set showcmd             " Show command 
+set showcmd             " Show command
 set cursorline          " highlight cursorline
 filetype indent on      " load filetype-specific indent files
 filetype plugin on      " load filetype-specific plugin files
@@ -43,7 +43,7 @@ set hlsearch            " highlight matches
 set ignorecase          " Use case insensitive search, except when using capital letters
 set smartcase
 "use ,h to toggle searched result:
-map <leader>h :set hlsearch!<cr>    
+map <leader>h :set hlsearch!<cr>
 
 "relative numbers map
 function! NumberToggle()
@@ -147,6 +147,9 @@ let g:ctrlp_custom_ignore = {
 "  \ 'file': '\v\.(exe|so|dll)$',
 "  \ 'link': 'some_bad_symbolic_links',
 "  \ }
+
+
+setglobal complete-=i       "Ctrl+n take too much time
 
 "Ag
 let g:ag_prg="ag --vimgrep"
