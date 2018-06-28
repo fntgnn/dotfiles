@@ -1,7 +1,14 @@
 # Vim
-## How to install
-- Install [Vundle](https://github.com/VundleVim/Vundle.vim)
-- Install [vim-colorscheme](https://github.com/flazz/vim-colorschemes) and copy the `colors/` folder in  `~/.vim/`
+Trying to use less plugins as possible (just copied the folders into my vim directory)
+
+## Installed plugins
+* [Ag](https://github.com/rking/ag.vim): search string in all file projects
+* [CtrlP](https://github.com/kien/ctrlp.vim): fuzzy finder
+* [vim-surround](https://github.com/tpope/vim-surround)
+* [vim-commentary](https://github.com/tpope/vim-commentary)
+* [NERDTree](https://github.com/scrooloose/nerdtree): show tree structure
+* Install ctags for searching tags in projects
+* [Codedark](https://github.com/tomasiser/vim-code-dark) theme
 
 ## Useful commands
 
@@ -19,16 +26,5 @@
 ### Clipboard
 * copy in the system clipboard: `"*y...`
 
-### Comments
-* toggle comment: `,c<space>`
-* comment line: `,cc`
-* remove comment line: `,cu`
-
 ### NERDTree
 * toggle: `Ctrl + n`
-
-### Emmet plugin
-* generator: `Ctrl+y+,`
-
-### Typescript
-* autoimport: `,i`. Move the cursor on the interface, method or component you need to import (es: `OnInit`, not `ngOnInit`)
