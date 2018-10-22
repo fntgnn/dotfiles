@@ -8,6 +8,18 @@
     "php.validate.executablePath": "C:/Users/giovanni.fontana/php/php.exe",
     "window.zoomLevel": 0,
     "editor.tabCompletion": true,
+    "vim.normalModesKeyBindingsNonRecursive": [ 
+        { 
+            "before": ["u"], 
+            "after": [],
+            "commands": [
+                {
+                    "command": "undo", 
+                    "args": []
+                }
+            ] 
+        } 
+    ],
     "vim.otherModesKeyBindingsNonRecursive": [ 
         { 
             "before": ["u"], 
