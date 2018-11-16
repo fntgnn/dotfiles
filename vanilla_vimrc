@@ -195,7 +195,8 @@ map <Space><Tab> <Esc>/<++><Enter>"_c4l
 	autocmd FileType tex inoremap ,tab \begin{tabular}<Enter><++><Enter>\end{tabular}<Enter><Enter><++><Esc>4kA{}<Esc>i
 	autocmd FileType tex inoremap ,ot \begin{tableau}<Enter>\inp{<++>}<Tab>\const{<++>}<Tab><++><Enter><++><Enter>\end{tableau}<Enter><Enter><++><Esc>5kA{}<Esc>i
         autocmd FileType tex inoremap ,fig \begin{figure}<Enter><Enter>\end{figure}<Enter><Enter><++><Esc>3kA\includegraphics[width=10cm]{}<Esc>i
-
+	autocmd FileType tex inoremap ,center \begin{center}<Enter><Enter>\end{center}<Enter><++><Esc>2ki
+	autocmd FileType tex inoremap ,block \begin{block}<Enter><Enter>\end{block}<Enter><++><Esc>2ki
 	autocmd FileType tex inoremap ,can \cand{}<Tab><++><Esc>T{i
 	autocmd FileType tex inoremap ,con \const{}<Tab><++><Esc>T{i
 	autocmd FileType tex inoremap ,v \vio{}<Tab><++><Esc>T{i
