@@ -217,7 +217,11 @@ map <Space><Tab> <Esc>/<++><Enter>"_c4l
 	autocmd FileType tex inoremap ,col \begin{columns}[T]<Enter>\begin{column}{.5\textwidth}<Enter><Enter>\end{column}<Enter>\begin{column}{.5\textwidth}<Enter><++><Enter>\end{column}<Enter>\end{columns}<Esc>5kA
 	autocmd FileType tex inoremap ,rn (\ref{})<++><Esc>F}i
 
+
 """PHP/HTML
+	autocmd FileType php,html inoremap ,html <!DOCTYPE html><Enter><html><Enter><head><Enter><title></title><Enter></head><Enter><body><Enter><++><Enter></body><Enter></html><Esc>5kcit
+	autocmd FileType php,html inoremap ,div <Enter><div><Enter><Enter></div><Enter><++><Esc>2ki
+	autocmd FileType php,html inoremap ,span <span></span><Space><++><Esc>11hi
 	autocmd FileType php,html inoremap ,b <b></b><Space><++><Esc>FbT>i
 	autocmd FileType php,html inoremap ,it <em></em><Space><++><Esc>FeT>i
 	autocmd FileType php,html inoremap ,1 <h1></h1><Enter><Enter><++><Esc>2kf<i
