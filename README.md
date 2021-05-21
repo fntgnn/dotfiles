@@ -1,6 +1,14 @@
 # Vim
 Trying to use less plugins as possible (just copied the folders into my vim directory)
 
+## Vanilla VIM
+Usando il visual:
+```
+# in python:
+:s/^/# /
+```
+
+
 ## Installed plugins
 * [Ag](https://github.com/rking/ag.vim): search string in all file projects
 * [CtrlP](https://github.com/kien/ctrlp.vim): fuzzy finder
