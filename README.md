@@ -2,11 +2,15 @@
 Trying to use less plugins as possible (just copied the folders into my vim directory)
 
 ## Vanilla VIM
+
+### Multiple line comments
 Usando il visual:
 ```
 # in python:
 :s/^/# /
 ```
+###
+
 
 
 ## Installed plugins
