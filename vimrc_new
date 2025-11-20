@@ -16,6 +16,8 @@ Plugin 'mattn/emmet-vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'tpope/vim-surround'
+Plugin 'kaarmu/typst.vim'
 call vundle#end()
 
 colorscheme gruvbox
