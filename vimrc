@@ -1,17 +1,14 @@
-" BASIC SETUP
-colorscheme desert
-"gvim
-if has('gui_running')
-  set guifont=Lucida_Console:h14	"set font
-  set noeb vb t_vb=			"disable beeps
-  set lines=999 columns=999		"maximize window
-  set autochdir                         "Automatically change the current directory
-endif
-"end gvim
-let mapleader = ","
+filetype off
 
 set nocompatible	"do not act like vi 
 syntax enable
+
+colorscheme retrobox
+set background=dark
+
+set nocompatible	"do not act like vi 
+syntax enable
+filetype indent on      " load filetype-specific indent files
 filetype plugin on
 set encoding=utf-8
 set fileencoding=utf-8
@@ -21,6 +18,20 @@ set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 set ignorecase          " Use case insensitive search, except when using capital letters
 set smartcase
+set colorcolumn=80      " set color column (ruler)
+" Set tabs to 2 spaces
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set number
+set showcmd             " Show command
+set cursorline          " highlight cursorline
+set mouse=a             " Use mouse
+set lazyredraw          " redraw only when we need to.
+set showmatch           " highlight matching [{()}]
+
+
+let mapleader=","       " leader is comma
 
 " Change cursor in insert mode:
 let &t_SI = "\e[6 q"
@@ -32,6 +43,7 @@ autocmd VimEnter * silent !echo -ne "\e[2 q"
 augroup END
 
 "relative numbers map
+set rnu
 function! NumberToggle()
   if(&relativenumber == 1)
     set norelativenumber
@@ -56,18 +68,18 @@ set ruler
 " Always display the status line, even if only one window is displayed
 set laststatus=2
 " SET STATUSBAR
-"function! GitBranch()
-"  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-"endfunction
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
 
-"function! StatuslineGit()
-"  let l:branchname = GitBranch()
-"  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-"endfunction
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
 
 set statusline=
 set statusline+=%#PmenuSel#
-"set statusline+=%{StatuslineGit()}
+set statusline+=%{StatuslineGit()}
 set statusline+=%#LineNr#
 set statusline+=\ %f
 set statusline+=%m\
@@ -104,21 +116,6 @@ map <leader>q :bp<cr>
 map <leader>w :bn<cr>
 
 
-
-
-" STYLING
-" Set tabs to 2 spaces
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-set number
-set showcmd             " Show command
-set cursorline          " highlight cursorline
-filetype indent on      " load filetype-specific indent files
-filetype plugin on      " load filetype-specific plugin files
-set mouse=a             " Use mouse
-set lazyredraw          " redraw only when we need to.
-set showmatch           " highlight matching [{()}]
 
 " FINDING FILES:
 
@@ -168,19 +165,21 @@ command! MakeTags !ctags -R .
 "
 
 " FILE BROWSING:
+
 " Tweaks for browsing
 let g:netrw_banner=0        " disable annoying banner
 let g:netrw_browse_split=4  " open in prior window
-let g:netrw_altv=1          " open splits to the right
+let g:netrw_altv=0          " open splits to the right
 let g:netrw_liststyle=3     " tree view
-let g:netrw_list_hide=netrw_gitignore#Hide()
-let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
-let g:netrw_winsize = 25
+"let g:netrw_list_hide=netrw_gitignore#Hide()
+"let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_winsize = 15
 " open it when open new file 
-"augroup ProjectDrawer
-"  autocmd!
-"  autocmd VimEnter * :Vexplore
-"augroup END
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * :Vexplore
+augroup END
+"autocmd FileType netrw wincmd p
 
 " NOW WE CAN:
 " - :edit a folder to open a file browser
@@ -189,40 +188,66 @@ let g:netrw_winsize = 25
 
 
 
-" Plugins settings:
-"""""""NerdTree
-nmap <C-n> :NERDTreeToggle %<CR>
+" ########################## Plugins settings ################################
+""""""""NerdTree
+"nmap <C-n> :NERDTreeToggle %<CR>
+"
+""""""""NerdCommenter
+"" Add spaces after comment delimiters by default
+"let g:NERDSpaceDelims = 1
+"" Use compact syntax for prettified multi-line comments
+"let g:NERDCompactSexyComs = 1
+"" Align line-wise comment delimiters flush left instead of following code indentation
+"let g:NERDDefaultAlign = 'left'
+"" Set a language to use its alternate delimiters by default
+"let g:NERDAltDelims_java = 1
+"" Add your own custom formats or override the defaults
+"let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+"" Allow commenting and inverting empty lines (useful when commenting a region)
+"let g:NERDCommentEmptyLines = 1
+"" Enable trimming of trailing whitespace when uncommenting
+"let g:NERDTrimTrailingWhitespace = 1
+"" Enable NERDCommenterToggle to check all selected lines is commented or not 
+"let g:NERDToggleCheckAllLines = 1
+"
+"
+"
+"" CtrlP
+"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+"let g:ctrlp_map = '<leader><leader>'
+"nnoremap <leader>b :CtrlPBuffer<cr>
+"nnoremap <leader>t :CtrlPTag<cr>
+"nnoremap <leader>f :CtrlPBufTag<cr>
+""nnoremap <leader>q :CtrlPQuickfix<cr>
+"nnoremap <leader>m :CtrlPMRU<cr>
+"
+"
+"" Fugitive
+""
+"nnoremap <leader>gaa :G add *<cr>
+"nnoremap <leader>gs :G<cr>
+"nnoremap <leader>gl :G log<cr>
+"nnoremap <leader>gc :G commit -m"
+"
+" ############################# Snippets ####################################
 
-"""""""NerdCommenter
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-" Align line-wise comment delimiters flush left instead of following code indentation
-let g:NERDDefaultAlign = 'left'
-" Set a language to use its alternate delimiters by default
-let g:NERDAltDelims_java = 1
-" Add your own custom formats or override the defaults
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
-" Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDCommentEmptyLines = 1
-" Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
-" Enable NERDCommenterToggle to check all selected lines is commented or not 
-let g:NERDToggleCheckAllLines = 1
+" Latex
+" Navigating with guides
+"inoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
+"vnoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
+"map <Space><Tab> <Esc>/<++><Enter>"_c4l
 
-"""""""""CtrlP
-let g:ctrlp_working_path_mode = 'ra'
-"set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-let g:ctrlp_show_hidden = 0
+map <leader>lat :!pdflatex % && start %:r.pdf<cr>
+autocmd FileType tex inoremap ,fr \begin{frame}<Enter>\frametitle{}<Enter><Enter><Enter><Enter>\end{frame}<Enter><Enter><Esc>6kf}i
+autocmd FileType tex inoremap ,bf \textbf{}<++><Esc>T{i
+autocmd FileType tex inoremap ,it \textit{}<++><Esc>T{i
+autocmd FileType tex inoremap ,ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter><++><Esc>3kA\item<Space>
+autocmd FileType tex inoremap ,ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter><++><Esc>3kA\item<Space>
+autocmd FileType tex inoremap ,li <Enter>\item<Space>
+nnoremap <leader>gps :G push<cr>
+nnoremap <leader>gpl :G pull<cr>
 
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-"let g:ctrlp_custom_ignore = {
-"  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-"  \ 'file': '\v\.(exe|so|dll)$',
-"  \ 'link': 'some_bad_symbolic_links',
-"     \ }
-"let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
-let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
+" Markdown preview
+let g:vim_markdown_folding_disabled = 1
+
+
